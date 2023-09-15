@@ -1,0 +1,34 @@
+RL Loop for Marketing
+
+The agent is an AI that is responsible for allocating budget across different advertising channels. 
+
+The main objective of the Agent is to maximize sales within the given budget.
+
+The agent has three primary actions:
+
+1. Invest in TV advertising.
+2. Invest in radio advertising.
+3. Invest in flyer advertising.
+For each action, the agent can decide to allocate a certain amount of money of the total budget. 
+
+The state is the following information:
+
+1. Budget Remaining
+2. Time and Day of the week
+    - Most people are not going to be watching TV at 11 AM on a Monday, we want the agent to learn that
+3. Season
+    - Christmas, etc.
+    - Weather, people are more likely to stay home when it's freezing so flyers are less relevant
+4. Historical ROI
+    - If radio advertising hasn't been working well then the agent should learn to avoid it.
+
+Reward
+The agent should be rewarded for the maximum ROI. For example, an agent spending $1000 on radio advertising and increasing sales by $10,000 should be rewarded more than an agent spending $10,0000 on flyer advertising and increasing sales by the same $10,000.
+I want the agent to have a short to medium-term strategy so the reward period should be 7 days. 
+
+Challenges
+- Some state information is much more important than others. The budget remaining state information is a hard limit for example while the days of the week are more subtle. 
+- There might not be enough diverse feedback for the agent based on the 7-day strategy.
+- An exploitation problem might occur where the agent only focuses on mediums that have had a historically high ROI. 
+- There is a lot more information that isn't in the state and not visible to the agent that might affect the outcome and is too complicated to take into account. For example, a news piece discouraging consumers from buying of TV, a competitor releasing a new product, or our own company releasing a new product, etc. 
+- There might be a big delay between the release of an advertisement and the ROI. For example, some advertisements only become relevant months, years, or decades later.
